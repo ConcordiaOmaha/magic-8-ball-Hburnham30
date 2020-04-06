@@ -1,35 +1,36 @@
-//------------- Magic 8 ball starter Code ----------------
-
 #include <iostream>
+
 #include <string>
+
+
 
 int main()
 {
     // variable declarations
     int userResponse; 
-    
     // prompt the user to enter some input. 
     std::cout << "on a scale of 1 to 10, How are you feeling today?\n"; 
     //take input from the user and store it to a variable. 
     std::cin >> userResponse;
-    
     //based on the input reply to the user. 
     if (userResponse == 1) 
-    {
-        std::cout << "We hope you feel better tomorrow... "; 
-    } else
-    {
-        std::cout << "It could be worse... "; 
-    }
-
+    {std::cout << "We hope you feel better tomorrow... no we dont\n";}
+    else if(userResponse > 10)
+    {std::cout<< "ERROR... is picking a number between 1 and 10 really that hard\n";}
+    else if(userResponse == 10) 
+    {std::cout << "you're lying\n";}
+    else if(userResponse > 5)
+    {std::cout<< "no need to brag\n";}
+    else if(userResponse != 1)
+    {std::cout<< "stop complaining\n";}
     //create a secondary reply that is completely random. 
     int randNum = rand() % 100;         // adding %100 keeps the random number between 0 and 99. 
-    
-    if (randNum > 60)
-    {
-        std::cout << "better luck next time"; 
-    } else 
-    {
-        std::cout << "Life must pretty good for you.";
-    }
+    if (randNum == 99)
+    {std::cout << "better luck next time"; } 
+    else if  (randNum > 50)
+    {std::cout << "You must be supersticous"; }
+    else if  (randNum > 25)
+    {std::cout << "your not yourself when your hungry"; }
+    else if  (randNum != 0)
+    {std::cout << "eat a snickers"; }
 }
